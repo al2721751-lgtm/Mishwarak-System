@@ -1,26 +1,15 @@
 ﻿// KNK Owner Portal Module - واجهة أصحاب الملك والوساطة السرية
 const express = require('express');
 const router = express.Router();
+const { centralPropertyListings } = require('./db');
 
-// التصنيفات الستة المعتمدة حصرياً
-const VALID_CATEGORIES = [
-    'PALACE',       // قصور
-    'VILLA',        // فلل
-    'APARTMENT',    // شقق
-    'COMMERCIAL',   // عماير تجارية
-    'FARM',         // مزارع
-    'LAND'          // أراضي فاضية
-];
+const VALID_CATEGORIES = ['PALACE', 'VILLA', 'APARTMENT', 'COMMERCIAL', 'FARM', 'LAND'];
 
-// قاعدة بيانات محلية مؤقتة خاصة بالعقارات المسجلة من أصحاب الملك
-let ownerListingsDatabase = [];
-
-// استمارة تسجيل العقار لصاحب الملك (مع تشفير وحفظ رقم الهاتف بسرية مطلقة)
 router.post('/api/owner/register-property', express.json(), (req, res) => {
     const { ownerName, ownerPhone, category, location, price, transactionType, description } = req.body;
 
     if (!VALID_CATEGORIES.includes(category)) {
-        return res.status(400).json({ error: 'التصنيف العقاري غير مطابق للقوائم الستة المعتمدة (قصور، فلل، شقق، عماير تجارية، مزارع، أراضي فاضية).' });
+        return res.status(400).json({ error: 'التصنيف العقاري غير مطابق للقوائم الستة المعتمدة.' });
     }
 
     if (!ownerPhone || !ownerName) {
@@ -33,18 +22,18 @@ router.post('/api/owner/register-property', express.json(), (req, res) => {
     const propertyRecord = {
         id: listingId,
         ownerName,
-        confidentialPhone: ownerPhone, // سرية مطلقة - لا تظهر في العرض العام
+        confidentialPhone: ownerPhone, // سرية مطلقة - محجوبة عن العامة
         category,
         location,
         price,
-        transactionType, // SALE أو RENT
+        transactionType,
         description,
         commission: commissionFee,
-        status: 'PENDING_BROKER_MATCH',
+        status: 'ACTIVE_BROKERAGE',
         registeredAt: new Date().toISOString()
     };
 
-    ownerListingsDatabase.push(propertyRecord);
+    centralPropertyListings.push(propertyRecord);
 
     res.status(201).json({
         success: true,

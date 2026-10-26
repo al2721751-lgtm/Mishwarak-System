@@ -1,0 +1,25 @@
+{
+  "name": "mishwarak-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/al2721751-lgtm/Mishwarak-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/al2721751-lgtm/Mishwarak-System/issues"
+  },
+  "homepage": "https://github.com/al2721751-lgtm/Mishwarak-System#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}

@@ -4,23 +4,28 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// ربط وحدة الوساطة العقارية
+// ربط وحدات النظام السيادي
 const realEstateRouter = require('./modules/realEstateBroker');
-app.use(realEstateRouter);
-
-// ربط واجهة أصحاب الملك
 const ownerPortalRouter = require('./modules/ownerPortal');
+const clientPortalRouter = require('./modules/clientPortal');
+
+app.use(realEstateRouter);
 app.use(ownerPortalRouter);
+app.use(clientPortalRouter);
 
 app.get('/', (req, res) => {
     res.json({ 
-        system: "KNK Mishwarak-System & RealEstate Owner Portal Active", 
-        status: "SECURE",
+        system: "KNK Mishwarak-System & Sovereign RealEstate Active", 
+        status: "PRODUCTION_READY",
         categories: ["قصور", "فلل", "شقق", "عماير تجارية", "مزارع", "أراضي فاضية"],
-        commissionPolicy: { rent: 50, sale: 250, role: "Pure Brokerage - No Contracts" }
+        brokerageRules: {
+            contractIntervention: false,
+            rentCommission: 50,
+            saleCommission: 250
+        }
     });
 });
 
 app.listen(PORT, () => {
-    console.log(`[KNK S-System] Server running on port ${PORT}`);
+    console.log(`[KNK S-System] Production Server running on port ${PORT}`);
 });

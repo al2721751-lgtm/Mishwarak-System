@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>منصة مشوارك الذكية - النقل التعاقدي الفاخر (VIP)</title>
+    <style>
+        body { font-family: Segoe UI, Tahoma, sans-serif; background: #090d16; color: #f8fafc; margin: 0; padding: 20px; }
+        .container { max-width: 1100px; margin: auto; }
+        h1, h2 { color: #38bdf8; text-align: center; }
+        .brand-header { text-align: center; margin-bottom: 25px; border-bottom: 2px solid #1e293b; padding-bottom: 20px; }
+        .bismillah { font-size: 22px; color: #facc15; font-weight: bold; margin-bottom: 10px; letter-spacing: 1px; }
+        .company-logo { font-size: 26px; color: #38bdf8; font-weight: bold; }
+        .portal-selector { display: flex; gap: 15px; justify-content: center; margin-bottom: 25px; }
+        .portal-btn { padding: 14px 28px; background: #1e293b; color: #94a3b8; border: 2px solid #334155; border-radius: 10px; cursor: pointer; font-size: 17px; font-weight: bold; transition: 0.3s; }
+        .portal-btn.active { background: #0284c7; color: white; border-color: #38bdf8; box-shadow: 0 0 15px rgba(2, 132, 199, 0.4); }
+        .view-panel { display: none; }
+        .view-panel.active { display: block; }
+        .card { background: #111827; padding: 25px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #1f2937; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        input, select { width: 100%; padding: 12px; margin-top: 6px; margin-bottom: 18px; font-size: 15px; border-radius: 8px; border: 1px solid #334155; background: #1f2937; color: #fff; box-sizing: border-box; }
+        button { padding: 14px 28px; background: #16a34a; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; }
+        button:hover { background: #15803d; }
+        .badge { background: #0284c7; color: white; padding: 3px 8px; border-radius: 4px; font-size: 12px; }
+        .phone-hidden { background: #7f1d1d; color: #fca5a5; padding: 4px 10px; border-radius: 6px; font-weight: bold; font-size: 13px; letter-spacing: 1px; }
+        
+        .rights-box { background: #0f172a; border: 2px solid #0284c7; padding: 20px; border-radius: 12px; margin-bottom: 25px; }
+        .rights-header { color: #38bdf8; font-size: 20px; font-weight: bold; margin-bottom: 15px; text-align: center; border-bottom: 1px solid #1e293b; padding-bottom: 10px; }
+        .right-item { background: #1e293b; padding: 12px 16px; border-radius: 8px; margin-bottom: 10px; border-right: 4px solid #38bdf8; }
+        .right-title { color: #facc15; font-weight: bold; font-size: 15px; margin-bottom: 4px; }
+        .right-desc { color: #cbd5e1; font-size: 14px; margin: 0; line-height: 1.5; }
+        
+        .payment-banner { background: linear-gradient(135deg, #1e3a8a, #0284c7); border: 2px solid #38bdf8; padding: 18px; border-radius: 10px; text-align: center; margin-bottom: 25px; font-size: 18px; font-weight: bold; color: #fff; box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ترويسة الشعار والبسملة -->
+        <div class="brand-header">
+            <div class="bismillah">[ بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ]</div>
+            <div class="company-logo">🚗 منصة "مشوارك" النقل التعاقدي الفاخر (VIP)</div>
+        </div>
+        
+        <!-- بانر الدورة المالية المرئي للجميع -->
+        <div class="payment-banner">
+            📅 النظام المالي للشركة: السداد والدفع معتمد وثابت حصرياً <u>كل يوم خميس</u> من كل أسبوع.
+        </div>
+
+        <div class="portal-selector">
+            <button class="portal-btn active" onclick="switchPortal('client')">👨‍🎓 بوابة الطلاب والموظفين</button>
+            <button class="portal-btn" onclick="switchPortal('driver')">🚙 بوابة السائقين (خاص للإدارة)</button>
+            <button class="portal-btn" onclick="switchPortal('admin')">⚡ الشفتين والطوارئ والتشغيل</button>
+        </div>
+
+        <!-- 1. بوابة الطلاب والموظفين -->
+        <div id="clientPanel" class="view-panel active">
+            
+            <!-- وثيقة حقوق الراكب -->
+            <div class="rights-box">
+                <div class="rights-header">📜 وثيقة حقوق الراكب الرسمية وسياسة السداد (للجميع)</div>
+                
+                <div class="right-item">
+                    <div class="right-title">البند الأساسي: سياسة السداد الأسبوعية (كل يوم خميس)</div>
+                    <div class="right-desc">يلتزم الطرف المتعاقد بسداد المستحقات المالية ودورة العقود بانتظام <strong>كل يوم خميس</strong> كشرط أساسي لضمران استمرارية الخدمة.</div>
+                </div>
+
+                <div class="right-item">
+                    <div class="right-title">البند الأول: ضمان دقة المواعيد (حضور 10 دقائق مبكراً)</div>
+                    <div class="right-desc">يلتزم السائق بالحضور والتواجد عند نقطة الانطلاق قبل الموعد بـ 10 دقائق كاملة.</div>
+                </div>
+
+                <div class="right-item">
+                    <div class="right-title">البند الثاني: التوصيل البديل الفوري على حساب الشركة</div>
+                    <div class="right-desc">في حال تأخر السائق أو حدوث طارئ، تتحمل المنظومة تكلفة تأمين وسيلة نقل بديلة فورية.</div>
+                </div>
+
+                <div class="right-item">
+                    <div class="right-title">البند الثالث: بيئة نقل فاخرة ومريحة (VIP)</div>
+                    <div class="right-desc">سيارة نظيفة ومعطرة، يمنع فيها التدخين قطعاً، مع التزام السائق بالزي الرسمي والهدوء التام.</div>
+                </div>
+
+                <div class="right-item">
+                    <div class="right-title">البند الرابع: التزام صارم بخط السير المتفق عليه</div>
+                    <div class="right-desc">يلتزم السائق بالمسار المحدد بين المنزل والوجهة، ويُمنع عليه منعاً باتاً تغيير خط السير.</div>
+                </div>
+
+                <div class="right-item">
+                    <div class="right-title">البند الخامس: مهلة الانتظار الرسمية (10 دقائق)</div>
+                    <div class="right-desc">ينتظر السائق لمدة 10 دقائق كحد أقصى، وفي حال عدم ظهور الراكب تخلَى مسؤولية المنصة والسائق.</div>
+                </div>
+
+                <div class="right-item">
+                    <div class="right-title">البند السادس: حماية البيانات والسرية التامة (لا تظهر نهائياً)</div>
+                    <div class="right-desc">أرقام التواصل وبياناتك الشخصية محمية ومخفية بالكامل تماماً، ولا تظهر للطرف الآخر نهائياً إلا بعد اعتماد وتأكيد التعاقد الرسمي وسداد العمولة للمنصة.</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📝 إرسال طلب نقل شهري (طلاب / موظفين)</h2>
+                <form onsubmit="registerClient(event)">
+                    <label>الاسم الكامل:</label>
+                    <input type="text" id="c_name" required placeholder="أدخل اسمك الكريم">
+                    
+                    <label>رقم الجوال (سري ومحمي بالكامل ولا يظهر لأي سائق):</label>
+                    <input type="text" id="c_phone" required placeholder="05xxxxxxxx">
+                    
+                    <label>الصفة / الفئة:</label>
+                    <select id="c_type">
+                        <option value="طالب">طالب / طالبة</option>
+                        <option value="موظف">موظف / موظفة</option>
+                    </select>
+
+                    <label>عنوان / لوكيشن المنزل (الانطلاق):</label>
+                    <input type="text" id="c_home" required placeholder="مثال: الرياض - حي الملقا">
+
+                    <label>عنوان / لوكيشن الوجهة (العمل/الجامعة):</label>
+                    <input type="text" id="c_work" required placeholder="مثال: جامعة الملك سعود">
+
+                    <label>المبلغ الشهري المقترح للتعاقد (ر.س):</label>
+                    <input type="number" id="c_budget" required placeholder="مثال: 1200">
+
+                    <button type="submit" style="width: 100%;">🚀 إرسال الطلب للمنصة</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- 2. بوابة السائقين -->
+        <div id="driverPanel" class="view-panel">
+            <div class="card">
+                <h2>👑 دستور ومعايير السائقين الصارمة (VIP)</h2>
+                <div style="background: #0f172a; border: 1px solid #334155; padding: 15px; border-radius: 8px; margin-bottom: 15px; font-size: 14px; color: #cbd5e1;">
+                    <ul>
+                        <li>السداد المالي والعمولات يعتمد <strong>كل يوم خميس</strong> بانتظام.</li>
+                        <li>منع التدخين تماماً والالتزام بالزي ونظافة المركبة.</li>
+                        <li>حظر التحدث الزائد وحظر تغيير خط السير.</li>
+                        <li>الوصول قبل 10 دقائق والانتظار 10 دقائق فقط.</li>
+                    </ul>
+                </div>
+
+                <h2>🚙 تسجيل سائق جديد</h2>
+                <form onsubmit="registerDriver(event)">
+                    <div style="display:flex; gap:15px;">
+                        <input type="text" id="d_name" required placeholder="اسم السائق">
+                        <input type="text" id="d_phone" required placeholder="رقم الجوال (سري)">
+                        <input type="text" id="d_car" required placeholder="نوع وموديل السيارة">
+                    </div>
+                    <button type="submit" style="background:#0284c7;">تسجيل السائق وإقراره بالدستور</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>📋 طلبات الركاب المتاحة (الأرقام مخفية تماماً)</h2>
+                <div id="driverClientList">جاري التحميل...</div>
+            </div>
+        </div>
+
+        <!-- 3. لوحة الإدارة والتشغيل -->
+        <div id="adminPanel" class="view-panel">
+            <div class="card">
+                <h2>⚙️ لوحة الإدارة والعمولات (10%) وتتبع الأسطول ودورة الخميس</h2>
+                <div id="adminContractsList">جاري التحميل...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchPortal(portal) {
+            document.querySelectorAll('.portal-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.view-panel').forEach(p => p.classList.remove('active'));
+
+            if(portal === 'client') {
+                document.querySelectorAll('.portal-btn')[0].classList.add('active');
+                document.getElementById('clientPanel').classList.add('active');
+            } else if(portal === 'driver') {
+                document.querySelectorAll('.portal-btn')[1].classList.add('active');
+                document.getElementById('driverPanel').classList.add('active');
+                loadDriverView();
+            } else if(portal === 'admin') {
+                document.querySelectorAll('.portal-btn')[2].classList.add('active');
+                document.getElementById('adminPanel').classList.add('active');
+                loadAdminView();
+            }
+        }
+
+        async function registerClient(e) {
+            e.preventDefault();
+            const payload = {
+                name: document.getElementById('c_name').value,
+                phone: document.getElementById('c_phone').value,
+                type: document.getElementById('c_type').value,
+                home: document.getElementById('c_home').value,
+                work: document.getElementById('c_work').value,
+                budget: parseFloat(document.getElementById('c_budget').value)
+            };
+            const res = await fetch('/api/client/add', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload) });
+            const data = await res.json();
+            if(data.success) { alert('تم إرسال طلبك بنجاح لمنصة مشوارك!'); location.reload(); }
+        }
+
+        async function registerDriver(e) {
+            e.preventDefault();
+            const payload = {
+                name: document.getElementById('d_name').value,
+                phone: document.getElementById('d_phone').value,
+                car: document.getElementById('d_car').value,
+                areas: 'VIP'
+            };
+            const res = await fetch('/api/driver/add', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload) });
+            const data = await res.json();
+            if(data.success) { alert('تم تسجيل السائق بنجاح!'); loadDriverView(); }
+        }
+
+        async function loadDriverView() {
+            const res = await fetch('/api/data');
+            const db = await res.json();
+            const container = document.getElementById('driverClientList');
+            container.innerHTML = '';
+            
+            if(db.clients.length === 0) {
+                container.innerHTML = '<p>لا توجد طلبات ركاب متاحة حالياً.</p>';
+                return;
+            }
+
+            db.clients.forEach(c => {
+                container.innerHTML += `
+                    <div style="background:#1f2937; padding:15px; border-radius:8px; margin-bottom:12px; border:1px solid #334155;">
+                        <h3>👤 الراكب: ${c.name} (<span class="badge">${c.type}</span>)</h3>
+                        <p><strong>🏠 المنزل:</strong> ${c.home}</p>
+                        <p><strong>🏢 الوجهة:</strong> ${c.work}</p>
+                        <p><strong>💰 العرض:</strong> <span style="color:#4ade80; font-weight:bold;">${c.budget} ر.س</span></p>
+                        <p><strong>📞 جوال الراكب:</strong> <span class="phone-hidden">🔒 مخفي نهائياً بقرار سيادي (محمي)</span></p>
+                        <button onclick="requestContract('${c.id}')" style="background:#0284c7; padding:8px 16px; font-size:14px;">تقديم طلب التعاقد</button>
+                    </div>
+                `;
+            });
+        }
+
+        async function requestContract(clientId) {
+            const driverPhone = prompt('أدخل رقم جوالك المسجل لتأكيد الطلب:');
+            if(!driverPhone) return;
+            
+            const res = await fetch('/api/contract/request', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ clientId, driverPhone })
+            });
+            const data = await res.json();
+            if(data.success) {
+                alert('تم قبول الطلب! السداد حصرياً يوم الخميس لتفعيل أرقام التواصل رسمياً.');
+            } else {
+                alert(data.message || 'رقم السائق غير مسجل.');
+            }
+        }
+
+        async function loadAdminView() {
+            const res = await fetch('/api/data');
+            const db = await res.json();
+            const container = document.getElementById('adminContractsList');
+            container.innerHTML = '';
+
+            if(db.contracts.length === 0) {
+                container.innerHTML = '<p>لا توجد تعاقدات معلقة حالياً.</p>';
+                return;
+            }
+
+            db.contracts.forEach(ct => {
+                const client = db.clients.find(x => x.id === ct.clientId);
+                const driver = db.drivers.find(x => x.phone === ct.driverPhone);
+                const commission = client ? (client.budget * 0.10).toFixed(2) : 0;
+
+                container.innerHTML += `
+                    <div style="background:#1f2937; padding:15px; border-radius:8px; margin-bottom:12px;">
+                        <h4>🔗 تعاقد بين السائق: [ ${driver ? driver.name : 'سائق'} ] والراكب: [ ${client ? client.name : 'عميل'} ]</h4>
+                        <p><strong>قيمة العقد:</strong> ${client ? client.budget : 0} ر.س | <strong>عمولة المنصة (10%):</strong> <span style="color:#facc15; font-weight:bold;">${commission} ر.س</span></p>
+                        <p><strong>دورة السداد:</strong> <span style="color:#38bdf8;">كل يوم خميس</span> | <strong>الحالة:</strong> ${ct.paid ? '<span style="color:#4ade80;">مدفوع (تم تفعيل الأرقام)</span>' : '<span style="color:#f87171;">معلق (في انتظار تسوية الخميس)</span>'}</p>
+                        
+                        ${ct.paid ? `
+                            <div style="background:#14532d; padding:10px; border-radius:6px;">
+                                <p style="margin:0; color:#86efac;"><strong>✅ أرقام التواصل المفعلة رسمياً:</strong></p>
+                                <p style="margin:5px 0 0 0;">جوال الراكب: <strong>${client ? client.phone : ''}</strong> | جوال السائق: <strong>${driver ? driver.phone : ''}</strong></p>
+                            </div>
+                        ` : `
+                            <button onclick="payCommission('${ct.id}')" style="background:#f59e0b; color:black; padding:8px 16px; font-size:14px; font-weight:bold;">تأكيد السداد (دورة الخميس) وكشف الأرقام</button>
+                        `}
+                    </div>
+                `;
+            });
+        }
+
+        async function payCommission(contractId) {
+            const res = await fetch('/api/contract/pay', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ contractId })
+            });
+            const data = await res.json();
+            if(data.success) {
+                alert('تم تأكيد السداد الأسبوعي وتفعيل الأرقام بنجاح!');
+                loadAdminView();
+            }
+        }
+    </script>
+</body>
+</html>
